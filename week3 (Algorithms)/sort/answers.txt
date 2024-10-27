@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Faster that sort3 when sorted but not when reversed
+
+sort2 uses: Merge Shell
+
+How do you know?: The fastest in return result with the random50000.txt
+
+sort3 uses: Selection Sort
+
+How do you know?: Takes the same time in sorted than reversed.

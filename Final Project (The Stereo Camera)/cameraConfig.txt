@@ -1,0 +1,2 @@
+exposureTime: 500
+analogGain: 10

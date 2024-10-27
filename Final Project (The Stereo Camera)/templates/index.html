@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Camera Stream</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> 
+    <!-- <link rel="stylesheet" type="text/css" href="/static/style.css"> -->
+</head>
+<body>
+    <h3>Dual Camera Stream</h3>
+    <div>
+        <div class="camContainer">
+            {% if flip %}
+                <div>
+                    <!-- <h3>Camera 1</h3> -->
+                    <!-- <img src="{{ url_for('video_feed', cam_id=1) }}" width="640" height="360"> -->
+                    <img src="{{ url_for('video_feed', cam_id=2) }}" width="100%">
+                </div>
+                <div>
+                    <!-- <h3>Camera 2</h3>
+                    <img src="{{ url_for('video_feed', cam_id=2) }}" width="640" height="360"> -->
+                    <img src="{{ url_for('video_feed', cam_id=1) }}" width="100%">
+                </div>
+
+            {% else %}
+                <div>
+                    <!-- <h3>Camera 1</h3> -->
+                    <!-- <img src="{{ url_for('video_feed', cam_id=1) }}" width="640" height="360"> -->
+                    <img src="{{ url_for('video_feed', cam_id=1) }}" width="100%">
+                </div>
+                <div>
+                    <!-- <h3>Camera 2</h3>
+                    <img src="{{ url_for('video_feed', cam_id=2) }}" width="640" height="360"> -->
+                    <img src="{{ url_for('video_feed', cam_id=2) }}" width="100%">
+                </div>
+
+            {% endif %}
+
+        </div>
+        
+        <div class="container">
+            <div class = "text">
+                <h3 class="mb-3">Current Value</h3>
+                <!-- <p>Distance: {distance} cm</p> -->
+                <!--<p>Distance: <span id="distance">...</span></p>-->
+                
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Cam 1</th>
+                        <th>Cam 2</th>
+                    </tr>
+                    <tr>
+                        <td>Exposure Time</td>
+                        <td id="exposureTimeCam1"> 1000</td>
+                        <td id="exposureTimeCam2"> 1000</td>
+                    </tr>
+                    <tr>
+                        <td>Gain</td>
+                        <td id="analogueGainCam1"> 1.0</td>
+                        <td id="analogueGainCam2"> 1.0</td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-primary" onclick="autoAdjust()">Auto Adjust</button>
+            </div>
+
+            <!-- <div class="form-container"> -->
+            <div >
+                <h3 class="mb-3">Config Camera</h3>
+                <form onsubmit="setParams(); return false;">
+                    <!-- <div class="form"> -->
+                    <!-- <table class="form">
+                        <tr>
+                            <td><label for="gain">Gain:</label></td> 
+                            <td><input type="number" id="gain" name="gain" step="0.1" value="1.0"></td> 
+                        </tr>
+                        
+                        <tr>
+                            <td><label for="exposure_time">Exposure Time (us):</label></td> 
+                            <td><input type="number" id="exposure_time" name="exposure_time" value="1000"></td> 
+                        </tr>
+                    </table> -->
+                    
+                    <div class="row mb-3">
+                        <label for="gain" class="col-sm col-form-label">Gain</label>
+                        <div class="col-sm">
+                          <input type="number" class="form-control" id="gain" name="gain" step="0.1" value="1.0">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="exposure_time" class="col-sm col-form-label">Exposure Time (us)</label>
+                        <div class="col-sm">
+                            <input type="number" class="form-control" id="exposure_time" name="exposure_time" value="1000">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Set Params</button>
+                    
+                    <!-- <div class="form"> -->
+                    
+                </form>
+            </div>
+
+            <div>
+                <h3 class="mb-3">Controls</h3>
+                <div class="camButtons">
+                    <button id="startBtn" type="button" class="btn btn-success mb-3" onclick="startRecording()">Start Recording</button>
+                    <button id="stopBtn" type="button" class="btn btn-danger mb-3" onclick="stopRecording()" style="display:none;">Stop Recording</button>
+                    <!-- <button onclick="window.location.href='/'">Show Both Cameras</button> -->
+                    <div>
+                        <!-- <button onclick="window.location.href='/camera/left'">Show Left Camera</button>
+                        <button onclick="window.location.href='/camera/right'">Show Right Camera</button> -->
+                    </div>
+                    <button type="button" class="btn btn-warning" onclick="stopServer()">Stop Server</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="{{ url_for('static', filename='functions.js') }}"></script>
+    
+</body>
+</html>

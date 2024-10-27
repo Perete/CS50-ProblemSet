@@ -1,0 +1,24 @@
+HTML Tags:
+1. <nav> - Used for the navigation menu.
+2. <ul> - Unordered list for navigation links.
+3. <li> - List item for navigation links.
+4. <a> - Anchor tag for navigation links.
+5. <h1> - Header for titles.
+6. <p> - Paragraph for text.
+7. <form> - Form for contact page.
+8. <input> - Input fields for the contact form.
+9. <textarea> - Text area for the message in the contact form.
+10. <img> - For the images in the gallery.
+
+CSS Properties:
+1. background-color - To set background colors.
+2. font-family - To set font styles.
+3. margin - To add space between elements.
+4. border-radius - To round the corners of images and forms.
+5. box-shadow - To add a shadow to the form on the contact page.
+
+JavaScript:
+- Used for an alert popup when the user clicks a button on the index page.
+
+Bootstrap:
+- Used the Bootstrap navbar for navigation and the grid system for the gallery.

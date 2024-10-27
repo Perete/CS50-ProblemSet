@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What number is bigger than 13?</h3>
+                <p id='msg1'></p>
+                <button id='opt1'>16</button>
+                <button id='opt2'>10</button>
+                <button id='opt3'>12</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is my favourite color?</h3>
+                <p id='msg2'></p>
+                <form  id="myForm">
+                    <input type="text" id="input" >
+                    <input type='submit' vale='Submit'>
+                </form>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const correctAnswerId = 'opt1';
+
+        const buttons = document.querySelectorAll('button');
+        const message1 = document.querySelector('#msg1')
+        const message2 = document.querySelector('#msg2')
+        const form = document.querySelector('#myForm')
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                // Comprobamos si el botón seleccionado tiene el ID de la respuesta correcta
+                if (button.id === correctAnswerId) {
+                    // Es la respuesta correcta
+                    button.className = 'correct'
+                    message1.textContent  = 'Correct!'
+                    message1.className = 'textCorrect'
+                    console.log('Correct!');
+                } else {
+                    // Es la respuesta incorrecta
+                    button.className = 'incorrect';
+                    message1.textContent  = 'Incorrect!'
+                    message1.className = 'textIncorrect'
+                    console.log('Incorrect. Try again.');
+                }
+                
+            });
+        });
+
+        form.addEventListener('submit', (event) =>{
+
+            const input = document.querySelector('#input')
+
+            if (input.value === 'red'){
+                input.className = 'correct'
+                message2.textContent  = 'Correct!'
+                message2.className = 'textCorrect'
+            }else{
+                input.className = 'incorrect'
+                message2.textContent  = 'Incorrect!'
+                message2.className = 'textIncorrect'
+            }
+
+            event.preventDefault()
+
+        })
+
+    </script>
+</html>

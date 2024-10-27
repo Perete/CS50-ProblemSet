@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!-- the submit of the form put the query string into the url,i mean -> /?name=yourVariableValue -->
+    <!-- <form action="/greet" method="get">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form> -->
+
+    <form action="/greet" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Post</button>
+    </form>
+
+{% endblock %}

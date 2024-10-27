@@ -1,0 +1,5 @@
+1. Audio aura can be calculated based on energy, daceability, tempo and this kind of paramateres. We can know for example that a person is happy if
+the person is listening songs faster or with a higher tempo or maybe songs that are easy to dance.
+
+2. Its may not be representative, becouse maybe you can be a very happy person, but maybe you just listen music in some kind or relax situation, or maybe
+you just listen music when you are sad and this is the reason why you may listen songs with lower tempo or slower kind of songs.

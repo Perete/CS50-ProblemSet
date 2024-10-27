@@ -25,16 +25,17 @@ This project was developed as the final project for the **CS50 Introduction to H
 - **IMU (Inertial Measurement Unit)**: Captures data on acceleration and rotation for spatial tracking.
 - **Ultrasonic Sensor**: Measures distance to objects, adding depth information to the stereo camera system.
 
-## Project Structure
-.
-├── static                    # Contains static assets (JavaScript, CSS)
-├── templates                 # HTML templates for the user interface
-├── test                      # For little experiments
-├── app.py                    # Main application server file
-├── CameraConfig.txt          # Configuration file for camera settings (not used)
-├── requeriments.txt          # Python dependencies
-├── treeManager.py            # Python functions for check and creating folders if not existing
-└── README.md
+## Project Structure:
+   ```markdown
+   .
+   ├── static                    # Contains static assets (JavaScript, CSS)
+   ├── templates                 # HTML templates for the user interface
+   ├── test                      # For little experiments
+   ├── app.py                    # Main application server file
+   ├── CameraConfig.txt          # Configuration file for camera settings (not used)
+   ├── requeriments.txt          # Python dependencies
+   ├── treeManager.py            # Python functions for check and creating folders if not existing
+   └── README.md
 
 ## Getting Started
 
@@ -50,10 +51,12 @@ This project was developed as the final project for the **CS50 Introduction to H
    cd project
 
 2. **Install dependencies**:
+   ```bash
    pip install -r requirements.txt
 
 ### Running the Application
 1. **Start the Server**:
+   ```bash
    python3 app.py
 
 2. **Access the Web Interface**:

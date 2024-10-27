@@ -26,8 +26,7 @@ This project was developed as the final project for the **CS50 Introduction to H
 - **Ultrasonic Sensor**: Measures distance to objects, adding depth information to the stereo camera system.
 
 ## Project Structure:
-   ```markdown
-   .
+   ```
    ├── static                    # Contains static assets (JavaScript, CSS)
    ├── templates                 # HTML templates for the user interface
    ├── test                      # For little experiments
@@ -36,7 +35,7 @@ This project was developed as the final project for the **CS50 Introduction to H
    ├── requeriments.txt          # Python dependencies
    ├── treeManager.py            # Python functions for check and creating folders if not existing
    └── README.md
-
+   ```
 ## Getting Started
 
 ### Prerequisites
